@@ -1,0 +1,175 @@
+/* TravelLog legal pages — shared stylesheet.
+   Plain CSS, no build step, no external fonts/CDN — meant to be copied
+   as-is into the travellog-legal repo alongside the 3 HTML pages. */
+
+:root {
+  color-scheme: light;
+  --bg: #fafaf8;
+  --surface: #ffffff;
+  --text-primary: #1f2529;
+  --text-secondary: #5a6368;
+  --border: #e6eaed;
+  --accent: #2f7d8f;
+  --draft-bg: #fff4e5;
+  --draft-border: #e8b86d;
+  --draft-text: #6b4a12;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.75;
+  font-size: 16px;
+}
+
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 16px 20px 64px;
+}
+
+header.site-nav {
+  position: sticky;
+  top: 0;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 10px 16px;
+  z-index: 10;
+}
+
+header.site-nav nav {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 14px;
+}
+
+header.site-nav a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 4px 0;
+}
+
+header.site-nav a[aria-current="page"] {
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+}
+
+header.site-nav a:hover {
+  color: var(--accent);
+}
+
+h1 {
+  font-size: 22px;
+  margin: 24px 0 4px;
+}
+
+h2 {
+  font-size: 18px;
+  margin: 32px 0 8px;
+  border-top: 1px solid var(--border);
+  padding-top: 24px;
+}
+
+h2:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+h3 {
+  font-size: 15px;
+  margin: 20px 0 6px;
+  color: var(--text-secondary);
+}
+
+p,
+li {
+  color: var(--text-primary);
+}
+
+ul,
+ol {
+  padding-left: 1.3em;
+}
+
+li + li {
+  margin-top: 6px;
+}
+
+.meta {
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin: 4px 0 20px;
+}
+
+.draft-banner {
+  background: var(--draft-bg);
+  border: 1px solid var(--draft-border);
+  color: var(--draft-text);
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+.placeholder {
+  background: #fff1f1;
+  border-bottom: 1px dashed #c0392b;
+  color: #c0392b;
+  padding: 0 2px;
+  font-weight: 600;
+}
+
+a {
+  color: var(--accent);
+}
+
+.contact-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  margin: 24px 0;
+  text-align: center;
+}
+
+.contact-box .email-link {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+footer.site-footer {
+  max-width: 720px;
+  margin: 48px auto 0;
+  padding: 16px 20px 0;
+  border-top: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-size: 13px;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+footer.site-footer a {
+  color: var(--text-secondary);
+}
+
+@media (max-width: 480px) {
+  .page {
+    padding: 12px 16px 48px;
+  }
+  header.site-nav nav {
+    gap: 12px;
+  }
+}
